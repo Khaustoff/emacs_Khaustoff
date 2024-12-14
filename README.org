@@ -24,8 +24,10 @@ Welcome to github, here is my emacs config. This config was made mainly for note
    
 *** Installation
 Okay, it's simple here:
-~git clone git@github.com:Khaustoff/emacs_Khaustoff.git~
-~cp -r /path/to/emacs.d ~/.emacs.d~
+#+begin_src sh
+git clone git@github.com:Khaustoff/emacs_Khaustoff.git
+cp -r /path/to/emacs.d ~/.emacs.d
+#+end_src
 And open emacs.
 
 P.S. After installing the packages, you can optionally install my themes ~sh ~/.emacs.d/install-theme.sh~

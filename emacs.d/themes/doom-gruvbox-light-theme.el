@@ -76,17 +76,17 @@ background contrast. All other values default to \"medium\"."
 
 
    (grey       '("#928374" "#8a8a8a" "grey"            )) ;; gruvbox-gray
-   (red        '("#9d0006" "#870000" "red"             )) ;; gruvbox-bright_red
-   (orange     '("#af3a03" "#af5f00" "brightred"       )) ;; gruvbox-bright_orange
-   (green      '("#79740e" "#878700" "green"           )) ;; gruvbox-bright_green
+   (red        '("#c14a4a" "#ea6962" "red"             )) ;; gruvbox-bright_red
+   (orange     '("#c35e0a" "#af5f00" "brightred"       )) ;; gruvbox-bright_orange
+   (green      '("#6c782e" "#878700" "green"           )) ;; gruvbox-bright_green
    (teal       '("#4db5bd" "#44b9b1" "brightgreen"     )) ;; gruvbox-
-   (yellow     '("#b57614" "#af8700" "yellow"          )) ;; gruvbox-bright_yellow
-   (blue       '("#076678" "#005f87" "brightblue"      )) ;; gruvbox-bright_blue
+   (yellow     '("#b47109" "#af8700" "yellow"          )) ;; gruvbox-bright_yellow
+   (blue       '("#45707a" "#005f87" "brightblue"      )) ;; gruvbox-bright_blue
    (dark-blue  '("#2b3c44" "#000087" "blue"            )) ;; gruvbox-dark_blue
-   (magenta    '("#b16286" "#d75f87" "magenta"         )) ;; gruvbox-faded_purple
-   (violet     '("#8f3f71" "#875f87" "brightmagenta"   )) ;; gruvbox-bright_purple
-   (cyan       '("#427b58" "#5f8787" "brightcyan"      )) ;; gruvbox-bright_aqua
-   (dark-cyan  '("#36473a" "#005f5f" "cyan"            )) ;; gruvbox-dark_aqua
+   (magenta    '("#d3869b" "#d75f87" "magenta"         )) ;; gruvbox-faded_purple
+   (violet     '("#945e80" "#875f87" "brightmagenta"   )) ;; gruvbox-bright_purple
+   (cyan       '("#4c7a5d" "#5f8787" "brightcyan"      )) ;; gruvbox-bright_aqua
+   (dark-cyan  '("#89b482" "#005f5f" "cyan"            )) ;; gruvbox-dark_aqua
 
    ;; Extra
    (delimiter-3       '("#8ec07c" "#87af87"                 ))
@@ -428,10 +428,10 @@ background contrast. All other values default to \"medium\"."
    (org-formula                 :foreground yellow)
    (org-headline-done           :foreground cyan)
    (org-latex-and-related       :foreground blue)
-   (org-level-1                 :foreground blue)
-   (org-level-2                 :foreground yellow)
-   (org-level-3                 :foreground violet)
-   (org-level-4                 :foreground red)
+   (org-level-1                 :foreground red)
+   (org-level-2                 :foreground green)
+   (org-level-3                 :foreground yellow)
+   (org-level-4                 :foreground violet)
    (org-level-5                 :foreground green)
    (org-level-6                 :foreground cyan)
    (org-level-7                 :foreground faded-blue)
@@ -441,7 +441,7 @@ background contrast. All other values default to \"medium\"."
    (org-scheduled-previously    :foreground faded-red)
    (org-scheduled-today         :foreground blue)
    (org-sexp-date               :foreground faded-blue :underline t)
-   (org-table                   :foreground blue)
+   (org-table                   :foreground cyan)
    (org-tag                     :bold t :weight 'bold)
    (org-time-grid               :foreground faded-orange)
    (org-todo                    :foreground red :weight 'bold :bold t)

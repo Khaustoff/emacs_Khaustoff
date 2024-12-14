@@ -52,8 +52,8 @@ background contrast. All other values default to \"medium\"."
           ((equal doom-gruvbox-dark-variant "norm") '("#282828" "#282828" nil)))) ; bg0
    (bg-alt
     (cond ((equal doom-gruvbox-dark-variant "hard") '("#0d1011" "black" nil))     ; (self-defined)
-          ((equal doom-gruvbox-dark-variant "soft") '("#282828" "#282828" nil))   ; bg0
-          (t                                        '("#1d2021" "#1e1e1e" nil)))) ; bg_h
+          ((equal doom-gruvbox-dark-variant "dark") '("#282828" "#282828" nil))   ; bg0
+          (t                                        '("#3c3836" "#3c3836" nil)))) ; bg_h
    (bg-alt2    '("#504945" "#504945" "brown"      )) ; bg2 (for region, selection etc.)
 
    (base0      '("#0d1011" "black"   "black"      )) ; (self-defined)
@@ -65,24 +65,23 @@ background contrast. All other values default to \"medium\"."
    (base6      '("#928374" "#909090" "brightblack")) ; gray
    (base7      '("#d5c4a1" "#cccccc" "brightblack")) ; fg2
    (base8      '("#fbf1c7" "#fbfbfb" "brightwhite")) ; fg0
-   (fg         '("#ebdbb2" "#dfdfdf" "brightwhite")) ; fg/fg1
+   (fg         '("#d4be98" "#dfdfdf" "brightwhite")) ; fg/fg1
    (fg-alt     '("#d5c4a1" "#cccccc" "brightwhite")) ; fg2
 
    ;; Standardized official colours from gruvbox
    (grey        '("#928374" "#909090" "brightblack"))   ; gray
-   (red         '("#fb4934" "#e74c3c" "red"))           ; bright-red
-   (mat-red     '("#ea6962" "#ea6962" "red"))           ; material-red
+   (red     	'("#ea6962" "#ea6962" "red"))           ; material-red
    (magenta     '("#b16286" "#b16286" "magenta"))       ; red
    (violet      '("#d3869b" "#d3869b" "brightmagenta")) ; bright-purple
-   (orange      '("#fe8019" "#fd971f" "orange"))        ; bright-orange
-   (yellow      '("#fabd2f" "#fabd2f" "yellow"))        ; bright-yellow
+   (orange      '("#e78a4e" "#e78a4e" "orange"))        ; bright-orange
+   (yellow      '("#d8a657" "#d8a657" "yellow"))        ; bright-yellow
    (dark-yellow '("#d79921" "#fabd2f" "yellow"))        ; yellow
    (teal        '("#8ec07c" "#8ec07c" "green"))         ; bright-aqua
-   (green       '("#b8bb26" "#b8bb26" "green"))         ; bright-green
+   (green       '("#a9b665" "#a9b665" "green"))         ; bright-green
    (dark-green  '("#98971a" "#98971a" "green"))         ; green
    (blue        '("#83a598" "#83a598" "brightblue"))    ; bright-blue
    (dark-blue   '("#458588" "#458588" "blue"))          ; blue
-   (cyan        '("#8ec07c" "#8ec07c" "brightcyan"))    ; bright-aqua
+   (cyan        '("#89b482" "#89b482" "brightcyan"))    ; bright-aqua
    (my-black    '("#37302f" "#37302f" "black"))
    (dark-cyan   '("#689d6a" "#689d6a" "cyan"))          ; aqua
 

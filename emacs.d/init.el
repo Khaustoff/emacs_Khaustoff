@@ -5,7 +5,7 @@
   (menu-bar-mode -1)
   (tool-bar-mode -1)
   (scroll-bar-mode -1)
-  (global-display-line-numbers-mode 1)
+  (global-display-line-numbers-mode -1)
   (electric-pair-mode t)
   (set-frame-font "FiraCode Medium 17" nil t))
 
@@ -23,7 +23,7 @@
   :custom
   (doom-themes-enable-bold t
   doom-themes-enable-italic nil)
-  :init (load-theme 'doom-gruvbox t))
+  :init (load-theme 'doom-gruvbox-light t))
 
 ;; Line
 (use-package doom-modeline
@@ -54,13 +54,18 @@
   :custom
   (org-bullets-bullet-list '("◉" "○" "●" "○" "●" "○" "●")))
 
+;; Agenda
 (use-package org
   :defer t
   :custom
   (org-log-done t)
   (org-agenda-files (list "~/Templates/emacs/emacs_tasks.org"
 			  "~/Templates/school/school.org"
-			  "~/Templates/programming/codding.org")))
+			  "~/Templates/programming/codding.org"
+  			  "~/Templates/other_tasks.org")))
+
+(use-package org-real
+  :ensure t)
 
 ;; Viewing images from links
 (use-package uimage
@@ -90,20 +95,11 @@
 ;; Company
 (use-package company
   :ensure t
-  :after lsp-mode
-  :config
-  (add-to-list 'company-backends 'company-capf)
-  (global-company-mode 1)
   :hook
-  (lsp-mode . company-mode)
-  (org-mode . company-mode))
-
-(use-package company-box
-  :ensure t
-  :diminish company-box-mode
-  :hook (company-mode . company-box-mode)
+  (org-mode . company-mode) 
+  (c-mode . company-mode)
   :init
-  (setq company-box-icons-alist  'company-box-icons-all-the-icons))
+  (setq company-format-margin-function nil))
 
 ;; Evil
 (use-package evil
@@ -132,7 +128,8 @@
 
 ;; Cc mode
 (use-package cc-mode
-  :ensure t)
+  :ensure t
+  :bind ("C-c c" . c-mode))
 
 ;; Lsp
 (use-package lsp-mode
@@ -159,10 +156,15 @@
 (use-package tree-sitter
   :ensure t)
 
-(use-package tree-sitter-langs
+(use-package treesit-auto
   :ensure t
-  :hook
-  (c-mode . tree-sitter-hl-mode))
+  :config
+  (global-treesit-auto-mode))
+
+;;(use-package tree-sitter-langs
+;;  :ensure t
+;;  :hook
+;;  (c-mode . tree-sitter-hl-mode))
 
 ;; Rainbow
 (use-package rainbow-mode
@@ -173,4 +175,11 @@
   (rainbow-latex-colors t)
   (rainbow-r-colors t)
   (rainbow-x-colors t)
-  :hook (prog-mode helpful-mode org-mode text-mode))
+  :hook
+  (prog-mode helpful-mode org-mode text-mode conf-mode))
+
+;; Vterm
+(use-package vterm
+  :ensure t
+  :bind
+  ("C-c t t" . vterm))
