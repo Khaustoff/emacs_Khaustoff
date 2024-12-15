@@ -17,6 +17,7 @@ Welcome to github, here is my emacs config. This config was made mainly for note
 | tree sitter           | syntax highlighting                                |
 | company mode          | autocomplete text                                  |
 | dashboard             | welcome screen                                     |
+| telega.el             | telegram client                                    |
 |-----------------------+----------------------------------------------------|
 
 *** Requirements
