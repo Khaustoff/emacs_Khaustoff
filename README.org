@@ -6,11 +6,12 @@ Welcome to github, here is my emacs config. This config was made mainly for note
 ** Preview 
 [[./Preview.jpg]]
 
-** Main plugins used:
+[[./Code.jpg]]
+[[./Telega.jpg]]
+** Main plugins used: 
 |-----------------------+----------------------------------------------------|
 | org mode              | notes                                              |
-| my custom doom themes | gruvbox dark soft                                  |
-| evil mode             | vi shortcuts                                       |
+| my custom doom themes | gruvbox material soft                              |
 | lsp mode              | lsp integration (clangd)                           |
 | cc mode               | editing files containing C, C++, Objective-C, Java |
 | tree sitter           | syntax highlighting                                |

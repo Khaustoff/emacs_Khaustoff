@@ -7,7 +7,7 @@
   (scroll-bar-mode -1)
   (global-display-line-numbers-mode -1)
   (electric-pair-mode t)
-  (set-frame-font "FiraCode Medium 17" nil t))
+  (set-frame-font "Fira Code Nerd Font Medium 17" nil t))
 
 ;; Repos
 (use-package package
@@ -33,7 +33,10 @@
 
 ;; Icons
 (use-package all-the-icons
-  :ensure t) 
+  :ensure t)
+
+(use-package nerd-icons
+  :ensure t)
 
 ;; Org-mode
 (use-package org
@@ -62,7 +65,7 @@
   (org-agenda-files (list "~/Templates/emacs/emacs_tasks.org"
 			  "~/Templates/school/school.org"
 			  "~/Templates/programming/codding.org"
-  			  "~/Templates/other_tasks.org")))
+  			  "~/Templates/other/other_tasks.org")))
 
 (use-package org-real
   :ensure t)
@@ -78,7 +81,7 @@
 
 ;; Welcome screen
  (use-package dashboard
-  :ensure t
+   :ensure t
   :custom
   (dashboard-startup-banner (concat user-emacs-directory "themes/emacs.txt"))
 ;;  (dashboard-startup-banner 'logo)
@@ -86,7 +89,11 @@
   (initial-buffer-choice (lambda () (get-buffer-create dashboard-buffer-name)))
   (dashboard-center-content t)
   (dashboard-show-shortcuts nil)
-  (dashboard-vertically-center-content t)  
+  (dashboard-vertically-center-content t)
+  (dashboard-display-icons-p t) ;; display icons on both GUI and terminal
+  (dashboard-icon-type 'nerd-icons) ;; use `nerd-icons' package
+  (dashboard-set-heading-icons t) ;; Use icons in heading
+  (dashboard-set-file-icons t) ;; Use icons in file names
   :config
   (dashboard-setup-startup-hook))
   (put 'upcase-region 'disabled nil)
@@ -100,26 +107,6 @@
   (c-mode . company-mode)
   :init
   (setq company-format-margin-function nil))
-
-;; Evil
-(use-package evil
-  :ensure t
-  :diminish
-  :bind
-  ("<escape>" . keyboard-escape-quit)
-  :custom
-  (evil-want-keybinding nil)
-  (evil-undo-system 'undo-fu)
-  :config
-  (evil-mode 1))
-
-(use-package evil-collection
-  :ensure t
-  :diminish (evil-collection-unimpaired-mode . "")
-  :custom
-  (evil-want-integration t)
-  :init
-  (evil-collection-init))
 
 ;; Disable custom-set-variables
 (use-package cus-edit
@@ -182,4 +169,60 @@
 (use-package vterm
   :ensure t
   :bind
-  ("C-c t t" . vterm))
+  ("C-c t v" . vterm))
+
+;; Telega
+(use-package alert
+  :ensure t
+  :defer t
+  :custom
+  (alert-default-style 'libnotify))
+
+(use-package telega
+  :ensure t
+  :custom
+  (telega-server-libs-prefix "/home/dct/.local/td")
+  (telega-video-play-inline t)
+  (telega-language "en")
+  (telega-dired-dwim-target t)
+  (telga-emoji-font-family "Fira Code Nerd Font")
+  (telega-symbol-reply "")
+  (telega-symbol-eye "")
+  (telega-symbol-contact "")
+  (telega-symbol-photo " ")
+  (telega-symbol-location "")
+  (telega-symbol-checkmark "<")
+  (telega-symbol-heavy-checkmark ">")
+  (telega-symbol-poll-options (list "󰝦" "󰝥"))
+  (telega-symbol-dice-list (list "󱅊" "󰇊" "󰇋" "󰇌" "󰇍" "󰇎" "󰇏"))
+  (telega--dice-emojis (list "󱅊" "󰇊" "󰇋" "󰇌" "󰇍" "󰇎" "󰇏"))
+  (telega-symbol-attachment "")
+  (telega-symbol-bell "")
+  (telega-symbol-lock "  ") 
+  (telega-symbol-game "")
+  (telega-symbol-audio "")
+  (telega-symbol-poll "")
+  (telega-symbol-flames "")
+  (telega-symbol-lightning "󱐋")
+  (telega-symbol-premium "")
+  (telega-symbol-favorite "")
+  (telega-symbol-telegram " ")
+  (telega-symbol-ballout-check "󰱒")
+  (telega-symbol-ballout-empty "󰄱")
+  (telega-symbol-poll-multiple-options (list "󰄱" "󰱒"))
+  (telega-symbol-phone "󰏲 ")
+  (telega-symbol-blocked "󰂭  ")
+  (telega-symbol-copyright "󰗦")
+  (telega-symbol-verified " 󰞑")
+  (telega-symbol-mode "<")
+  (telega-symbol-draft "Draft")
+    (telega-appindicator-icon-colors '((offline "#504945" "#ebdbb2" nil)
+					 (online "#458588" "#ebdbb2" "#b8bb26")
+					 (connecting "#b16286" "#ebdbb2" "#d79921")))
+  :config
+  (require 'telega-alert)
+  (telega-notifications-mode t)
+  (telega-appindicator-mode t)
+  (telega-alert-mode t)
+  :bind
+  ("C-c t t" . telega))
