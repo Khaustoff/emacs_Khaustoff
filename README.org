@@ -23,6 +23,7 @@ Welcome to github, here is my emacs config. This config was made mainly for note
 *** Requirements
 1. [[https://www.gnu.org/software/emacs/][Emacs 29+]] (for tree sitter)
 2. [[https://github.com/clangd/clangd][Clangd]] (this is lsp for: C, C++, Objective-C)
+3. [[https://github.com/tdlib/td][TDlib]] (for telega.el)
    
 *** Installation
 Okay, it's simple here:
