@@ -6,7 +6,10 @@ Welcome to github, here is my emacs config. This config was made mainly for note
 ** Preview 
 [[./Preview.jpg]]
 
+
+
 [[./Code.jpg]]
+[[./Org.jpg]]
 [[./Telega.jpg]]
 ** Main plugins used: 
 |-----------------------+----------------------------------------------------|
