@@ -7,6 +7,7 @@
   (scroll-bar-mode -1)
   (global-display-line-numbers-mode -1)
   (electric-pair-mode t)
+  (auto-fill-mode t)
   (set-frame-font "Fira Code Nerd Font Medium 17" nil t))
 
 ;; Repos
@@ -64,11 +65,8 @@
   (org-log-done t)
   (org-agenda-files (list "~/Templates/emacs/emacs_tasks.org"
 			  "~/Templates/school/school.org"
-			  "~/Templates/programming/codding.org"
+			  "~/Templates/programming/C/TCPL.org"
   			  "~/Templates/other/other_tasks.org")))
-
-(use-package org-real
-  :ensure t)
 
 ;; Viewing images from links
 (use-package uimage
@@ -188,7 +186,7 @@
   (telga-emoji-font-family "Fira Code Nerd Font")
   (telega-symbol-reply "")
   (telega-symbol-eye "")
-  (telega-symbol-contact "")
+  (telega-symbol-contact "󰓎")
   (telega-symbol-photo " ")
   (telega-symbol-location "")
   (telega-symbol-checkmark "<")
@@ -215,7 +213,8 @@
   (telega-symbol-copyright "󰗦")
   (telega-symbol-verified " 󰞑")
   (telega-symbol-mode "<")
-  (telega-symbol-draft "Draft")
+  (telega-symbol-folder " ")
+    (telega-symbol-draft "Draft")
     (telega-appindicator-icon-colors '((offline "#504945" "#ebdbb2" nil)
 					 (online "#458588" "#ebdbb2" "#b8bb26")
 					 (connecting "#b16286" "#ebdbb2" "#d79921")))
@@ -226,3 +225,11 @@
   (telega-alert-mode t)
   :bind
   ("C-c t t" . telega))
+
+
+;; Xah Fly
+(use-package xah-fly-keys
+  :load-path "lisp/"
+  :config
+  (xah-fly-keys-set-layout "qwerty")
+  (xah-fly-keys 1))

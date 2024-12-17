@@ -18,6 +18,7 @@ Welcome to github, here is my emacs config. This config was made mainly for note
 | company mode          | autocomplete text                                  |
 | dashboard             | welcome screen                                     |
 | telega.el             | telegram client                                    |
+| xah fly keys          | emacs hotkeys                                      |
 |-----------------------+----------------------------------------------------|
 
 *** Requirements
