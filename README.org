@@ -10,21 +10,22 @@ Welcome to github, here is my emacs config. This config was made mainly for note
 [[./Telega.jpg]]
 ** Main plugins used: 
 |-----------------------+----------------------------------------------------|
-| org mode              | notes                                              |
+| [[https://orgmode.org/][org mode]]              | notes                                              |
 | my custom doom themes | gruvbox material soft                              |
-| lsp mode              | lsp integration (clangd)                           |
-| cc mode               | editing files containing C, C++, Objective-C, Java |
-| tree sitter           | syntax highlighting                                |
+| [[https://www.gnu.org/software/emacs/manual/html_mono/ccmode.html][cc mode]]               | editing files containing C, C++, Objective-C, Java |
+| [[https://emacs-lsp.github.io/lsp-mode/][lsp mode]]              | lsp integration (clangd)                           |
+| tree sitter           | syntax highlighting (off now)                      |
 | company mode          | autocomplete text                                  |
 | dashboard             | welcome screen                                     |
-| telega.el             | telegram client                                    |
-| xah fly keys          | emacs hotkeys                                      |
+| [[https://zevlg.github.io/telega.el/][telega.el]]             | telegram client                                    |
+| [[https://github.com/xahlee/xah-fly-keys][xah fly keys]]          | emacs hotkeys                                      |
 |-----------------------+----------------------------------------------------|
 
 *** Requirements
 1. [[https://www.gnu.org/software/emacs/][Emacs 29+]] (for tree sitter)
 2. [[https://github.com/clangd/clangd][Clangd]] (this is lsp for: C, C++, Objective-C)
 3. [[https://github.com/tdlib/td][TDlib]] (for telega.el)
+4. [[https://www.nerdfonts.com/font-downloads][Fira Code Nerd Font]] (for icons, but you can change it)
    
 *** Installation
 Okay, it's simple here:
@@ -33,5 +34,3 @@ git clone git@github.com:Khaustoff/emacs_Khaustoff.git
 cp -r /path/to/emacs.d ~/.emacs.d
 #+end_src
 And open emacs.
-
-P.S. After installing the packages, you can optionally install my themes ~sh ~/.emacs.d/install-theme.sh~

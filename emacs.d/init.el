@@ -9,6 +9,15 @@
   (electric-pair-mode t)
   (auto-fill-mode t)
   (set-frame-font "Fira Code Nerd Font Medium 17" nil t))
+  
+;; Enable local themes
+(use-package emacs
+  :ensure nil
+  :load-path "themes/"
+  :init
+  (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
+  :config
+  (load-theme 'doom-gruvbox-light t))
 
 ;; Repos
 (use-package package
@@ -17,15 +26,6 @@
   (package-archives
 	  '(("melpa" . "https://melpa.org/packages/")
 	    ("elpa" . "https://elpa.gnu.org/packages/"))))
-
-;; Colorschemes
-(use-package doom-themes
-  :ensure t
-  :custom
-  (doom-themes-enable-bold t
-  doom-themes-enable-italic nil)
-  :init (load-theme 'doom-gruvbox-light t))
-
 ;; Line
 (use-package doom-modeline
   :ensure t
@@ -50,7 +50,10 @@
   (org-level-1 ((t (:inherit outline-1 :height 1.25))))
   (org-level-2 ((t (:inherit outline-2 :height 1.2))))
   (org-level-3 ((t (:inherit outline-3 :height 1.1))))
+  :hook
+  (org-mode . org-indent-mode)
   :bind ("C-c a". org-agenda))
+
 
 (use-package org-bullets
   :ensure t
@@ -58,15 +61,16 @@
   :custom
   (org-bullets-bullet-list '("◉" "○" "●" "○" "●" "○" "●")))
 
+;; TODO Change to your agenda files
 ;; Agenda
-(use-package org
-  :defer t
-  :custom
-  (org-log-done t)
-  (org-agenda-files (list "~/Templates/emacs/emacs_tasks.org"
-			  "~/Templates/school/school.org"
-			  "~/Templates/programming/C/TCPL.org"
-  			  "~/Templates/other/other_tasks.org")))
+;; (use-package org
+ ;; :defer t
+ ;; :custom
+ ;; (org-log-done t)
+ ;; (org-agenda-files (list "~/Templates/emacs/emacs_tasks.org"
+			  ;; "~/Templates/school/school.org"
+			  ;; "~/Templates/programming/C/TCPL.org"
+  			  ;; "~/Templates/other/other_tasks.org")))
 
 ;; Viewing images from links
 (use-package uimage
@@ -113,8 +117,10 @@
 
 ;; Cc mode
 (use-package cc-mode
-  :ensure t
-  :bind ("C-c c" . c-mode))
+   :config
+   (add-hook 'c-mode-common-hook
+    (lambda ()
+       (c-set-style "bsd"))))
 
 ;; Lsp
 (use-package lsp-mode
@@ -137,19 +143,14 @@
   :config
   (vim-tab-bar-mode t))
 
-;; Treesitter
-(use-package tree-sitter
-  :ensure t)
+;; Treesitter	I don't need it
+;; (use-package tree-sitter
+ ;; :ensure t)
 
-(use-package treesit-auto
-  :ensure t
-  :config
-  (global-treesit-auto-mode))
-
-;;(use-package tree-sitter-langs
-;;  :ensure t
-;;  :hook
-;;  (c-mode . tree-sitter-hl-mode))
+;; (use-package tree-sitter-langs
+ ;; :ensure t
+ ;; :hook
+ ;; (c-mode . tree-sitter-hl-mode))
 
 ;; Rainbow
 (use-package rainbow-mode
