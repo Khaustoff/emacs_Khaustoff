@@ -1,13 +1,14 @@
 * Emacs_Khaustoff
-
 ** What is this
 Welcome to github, here is my emacs config. This config was made mainly for notes, but you can also write code.
 
 ** Preview 
-[[./Preview.jpg]]
-[[./Code.jpg]]
-[[./Org.jpg]]
-[[./Telega.jpg]]
+[[./main.jpg]]
+[[./org-mode.jpg]]
+[[./code.jpg]]
+[[./ewww.jpg]]
+[[./telega.jpg]]
+
 ** Main plugins used: 
 |-----------------------+----------------------------------------------------|
 | [[https://orgmode.org/][org mode]]              | notes                                              |
@@ -18,7 +19,7 @@ Welcome to github, here is my emacs config. This config was made mainly for note
 | company mode          | autocomplete text                                  |
 | dashboard             | welcome screen                                     |
 | [[https://zevlg.github.io/telega.el/][telega.el]]             | telegram client                                    |
-| [[https://github.com/xahlee/xah-fly-keys][xah fly keys]]          | emacs hotkeys                                      |
+| [[https://github.com/xahlee/xah-fly-keys][xah fly keys]]          | best emacs hotkeys                                 |
 |-----------------------+----------------------------------------------------|
 
 *** Requirements
