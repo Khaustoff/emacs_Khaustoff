@@ -117,10 +117,11 @@
 
 ;; Cc mode
 (use-package cc-mode
-   :config
-   (add-hook 'c-mode-common-hook
-    (lambda ()
-       (c-set-style "bsd"))))
+  :custom
+  (c-electric-flag nil)
+  (c-default-style '((c-mode . "bsd")
+		     (c++-mode . "bsd")
+                     (other . "gnu"))))
 
 ;; Lsp
 (use-package lsp-mode
