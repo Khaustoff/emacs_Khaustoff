@@ -121,7 +121,7 @@
   (c-electric-flag nil)
   (c-default-style '((c-mode . "bsd")
 		     (c++-mode . "bsd")
-                     (other . "gnu"))))
+                     (other . "bsd"))))
 
 ;; Lsp
 (use-package lsp-mode
@@ -235,3 +235,19 @@
   :config
   (xah-fly-keys-set-layout "qwerty")
   (xah-fly-keys 1))
+
+(use-package key-chord
+  :ensure t
+  :config
+  (key-chord-mode 1)
+  (key-chord-define-global "jk" 'xah-fly-command-mode-activate))  
+
+(use-package  disable-mouse
+  :ensure t
+  :hook
+  (c-mode . disable-mouse-mode)
+  (org-mode . disable-mouse-mode))
+
+;; Magit
+(use-package magit
+  :ensure t)
